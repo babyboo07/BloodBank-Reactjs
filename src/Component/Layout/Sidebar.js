@@ -28,25 +28,25 @@ const Siderbar = (props) => {
         id="sidebar"
       >
         <Menu.Item key="dashboard">
-          <NavLink to="/">
+          <NavLink className={'text-decoration-none'} to="/">
             <AreaChartOutlined />
             <span>Dashboard</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="category">
-          <NavLink to="/category/list">
+          <NavLink className={'text-decoration-none'} to="/category/list">
             <UnorderedListOutlined />
             <span>Nhóm máu</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="product">
-          <NavLink to="/product/list">
+          <NavLink className={'text-decoration-none'} to="/product/list">
             <ContainerOutlined />
             <span>Bài viết</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="order">
-          <NavLink to="/order/list">
+          <NavLink className={'text-decoration-none'} to="/order/list">
             <span className="anticon">
               <FontAwesomeIcon icon={faCartArrowDown} />
             </span>
@@ -54,7 +54,7 @@ const Siderbar = (props) => {
           </NavLink>
         </Menu.Item>
         <Menu.Item key="account">
-          <NavLink to="/account/list">
+          <NavLink className={'text-decoration-none'} to="/account/list">
             <span className="anticon">
               <FontAwesomeIcon icon={faCircleUser} />
             </span>
