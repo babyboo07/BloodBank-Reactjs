@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(26, 148, 255);
+  background-color: #034c98;
 }
 
 .page-header {
@@ -120,4 +120,12 @@
 .btn-cart {
   padding-top: 6px;
   text-align: right;
+}
+.site-layout-sub-header-background {
+  padding: 24px;
+  background-color: #fff;
+}
+
+.site-layout-background {
+  background-color: #ffffff;
 }
