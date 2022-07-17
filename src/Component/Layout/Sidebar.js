@@ -1,7 +1,14 @@
 import React from "react";
 import { Menu, Layout } from "antd";
-import { AreaChartOutlined, UnorderedListOutlined, ContainerOutlined } from "@ant-design/icons";
-import { faCircleUser, faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  AreaChartOutlined,
+  UnorderedListOutlined,
+  ContainerOutlined,
+} from "@ant-design/icons";
+import {
+  faCircleUser,
+  faCartArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../../logo.svg";
 import { NavLink, useLocation } from "react-router-dom";
@@ -9,6 +16,8 @@ import { NavLink, useLocation } from "react-router-dom";
 const { Sider } = Layout;
 
 const Siderbar = (props) => {
+  const location = useLocation();
+  let locationSplit = location.pathname.split("/");
   return (
     <Sider
       style={{
@@ -17,7 +26,10 @@ const Siderbar = (props) => {
       collapsed={props.isCollapse}
       theme="light"
     >
-      <div className="logo text-center" style={{ height: props.isCollapse ? 50 : 100 }}>
+      <div
+        className="logo text-center"
+        style={{ height: props.isCollapse ? 50 : 100 }}
+      >
         <img src={logo} height={props.isCollapse ? 50 : 100} />
       </div>
       <Menu
@@ -26,35 +38,38 @@ const Siderbar = (props) => {
         mode="inline"
         theme="light"
         id="sidebar"
+        selectedKeys={[
+          locationSplit.length > 1 ? locationSplit[1].toLocaleLowerCase() : "",
+        ]}
       >
         <Menu.Item key="dashboard">
-          <NavLink className={'text-decoration-none'} to="/">
+          <NavLink to="/" className="text-decoration-none">
             <AreaChartOutlined />
             <span>Dashboard</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="category">
-          <NavLink className={'text-decoration-none'} to="/category/list">
+          <NavLink to="/category/list" className="text-decoration-none">
             <UnorderedListOutlined />
-            <span>Nhóm máu</span>
+            <span>Thông tin liên hệ</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="product">
-          <NavLink className={'text-decoration-none'} to="/product/list">
+          <NavLink to="/product/list" className="text-decoration-none">
             <ContainerOutlined />
             <span>Bài viết</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="order">
-          <NavLink className={'text-decoration-none'} to="/order/list">
+          <NavLink to="/order/list" className="text-decoration-none">
             <span className="anticon">
               <FontAwesomeIcon icon={faCartArrowDown} />
             </span>
-            <span>Thông tin liên hệ </span>
+            <span>Nhóm máu</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="account">
-          <NavLink className={'text-decoration-none'} to="/account/list">
+          <NavLink to="/account/list" className="text-decoration-none">
             <span className="anticon">
               <FontAwesomeIcon icon={faCircleUser} />
             </span>

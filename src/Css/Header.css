@@ -121,3 +121,11 @@
   padding-top: 6px;
   text-align: right;
 }
+.site-layout-sub-header-background {
+  padding: 24px;
+  background-color: #fff;
+}
+
+.site-layout-background {
+  background-color: #ffffff;
+}
