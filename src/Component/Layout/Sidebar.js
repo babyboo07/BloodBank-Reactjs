@@ -33,7 +33,7 @@ const Siderbar = (props) => {
         <img src={logo} height={props.isCollapse ? 50 : 100} />
       </div>
       <Menu
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={["dashboard"]}
         defaultOpenKeys={["/dashboard"]}
         mode="inline"
         theme="light"
