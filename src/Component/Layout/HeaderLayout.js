@@ -11,56 +11,40 @@ import {
 
 const { Header } = Layout;
 
-const HeaderLayout = (props) => {
-  const menu = (
-    <Menu
-      items={[
-        {
-          label: (
-            <a
-              className="menu-item"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="#"
-            >
-              <FontAwesomeIcon icon={faInfo} className={"px-2"} />
-              My information
-            </a>
-          ),
-        },
-        {
-          label: (
-            <a
-              className="menu-item"
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`/changepass/`}
-            >
-              <FontAwesomeIcon icon={faKey} className={"px-2"} />
-              Change passwork
-            </a>
-          ),
-        },
-        {
-          label: (
-            <a className="menu-item" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon
-                icon={faArrowAltCircleRight}
-                className={"px-2"}
-              />
-              Logout
-            </a>
-          ),
-        },
-      ]}
-    />
-  );
+const menu = (
+  <Menu
+    items={[
+      {
+        label: (
+          <a className="menu-item" target="_blank" rel="noopener noreferrer" href="#">
+            <FontAwesomeIcon icon={faInfo} className={"px-2"} />
+            My information
+          </a>
+        ),
+      },
+      {
+        label: (
+          <a className="menu-item" target="_blank" rel="noopener noreferrer" href={`#`}>
+            <FontAwesomeIcon icon={faKey} className={"px-2"} />
+            Change passwork
+          </a>
+        ),
+      },
+      {
+        label: (
+          <a className="menu-item" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faArrowAltCircleRight} className={"px-2"} />
+            Logout
+          </a>
+        ),
+      },
+    ]}
+  />
+);
 
+const HeaderLayout = (props) => {
   return (
-    <Header
-      className="site-layout-sub-header-background"
-      style={{ padding: 0 }}
-    >
+    <Header className="site-layout-sub-header-background" style={{ padding: 0 }}>
       <div className="col-12 row">
         <div className="col-7">
           <FontAwesomeIcon
@@ -72,7 +56,7 @@ const HeaderLayout = (props) => {
           />
         </div>
         <div className="col-5 bd-highlight text-end">
-          <Dropdown overlay={menu}>
+          <Dropdown overlay={menu} placement="bottomLeft" arrow>
             <a onClick={(e) => e.preventDefault()}>
               <Space>
                 <FontAwesomeIcon icon={faFaceDizzy} size="xl" color="black" />

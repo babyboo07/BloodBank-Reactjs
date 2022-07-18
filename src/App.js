@@ -2,14 +2,7 @@ import "./App.css";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-import {
-  BrowserRouter,
-  Router,
-  Navigate,
-  Route,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter, Router, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Siderbar from "./Component/Layout/Sidebar";
 import Header from "./Component/Layout/Header";
 import Login from "./Component/Login";
@@ -18,6 +11,9 @@ import { Layout } from "antd";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import AdminList from "./Component/Admin/AdminList";
 import HeaderLayout from "./Component/Layout/HeaderLayout";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AdminAdd from "./Component/Admin/AdminAdd";
 
 const { Content, Footer } = Layout;
 
@@ -29,15 +25,9 @@ function App() {
         <Layout>
           <Siderbar isCollapse={isCollapse}></Siderbar>
           <Layout>
-            <HeaderLayout
-              isCollapse={isCollapse}
-              setIsCollapse={setIsCollapse}
-            />
+            <HeaderLayout isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
             <Content style={{ margin: "24px 16px 0" }}>
-              <div
-                className="site-layout-background"
-                style={{ padding: 24, minHeight: 360 }}
-              >
+              <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                 {/* <Header /> */}
                 <Content
                   className="bg-white"
@@ -48,6 +38,7 @@ function App() {
                   <Routes>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/account/list" element={<AdminList />} />
+                    <Route path="/account/add" element={<AdminAdd />} />
                   </Routes>
                 </Content>
                 <Routes>
@@ -57,8 +48,8 @@ function App() {
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
-              Ecommerce ©2022 Created by Babyboo with
-              {/* <FontAwesomeIcon icon={faHeart} color={"red"} /> */}
+              Blood Bank ©2022 Created by mai.pn and nam.nv with
+              <FontAwesomeIcon icon={faHeart} color={"red"} />
             </Footer>
           </Layout>
         </Layout>

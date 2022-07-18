@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons'
 import { ExclamationCircleOutlined } from '@ant-design/icons';
+import DeleteConfirm from "../Common/DeleteConfirm";
 
 const col = [
   {
@@ -49,12 +50,10 @@ const col = [
     render: (val) => {
       return (
         <>
-          <Link className="btn mr-3" to={"/account/edit/" + val.id}>
-            <FontAwesomeIcon icon={faPen} color="#ffc107" />
-          </Link>
           <Button
             className="btn mr-1"
           >
+            onClick={DeleteConfirm(val.id)}
             <FontAwesomeIcon icon={faTrashCan} color="#dc3545" />
           </Button>
         </>
